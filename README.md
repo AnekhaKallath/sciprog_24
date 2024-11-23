@@ -5,11 +5,11 @@
 ### Student Number: 24205324
 ### Submission Date: 24 November 2024
 
-##INTRODUCTION
+## INTRODUCTION
 
 This is my repository for the ICHEC(Irish Centre for High-End Computing) Git Assignments for the academic year 2024/25.
 
-##REPOSITORY
+## REPOSITORY
 
 This repository includes all the practicals from week 2 to week 9, which are also uploaded and compiled in the sciprog.
 

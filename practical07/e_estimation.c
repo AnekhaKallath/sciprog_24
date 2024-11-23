@@ -1,77 +1,83 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
-// Function to dynamically allocate aarray
-double* allocate_array(int order) {
-    return (double*)malloc(order * sizeof(double));
+// Allocate memory for array
+double* allocateArray(int size) {
+    return (double*)malloc(size * sizeof(double));
 }
 
-// Function to calculate the factorial
-double factorial(int n) {
-    double result = 1.0;
-    for (int i = 1; i <= n; i++) {
-        result *= i;
-    }
-    return result;
-}
-
-// Function to calculate approximation for e
-double e_approximation(double* terms, int order) {
-    double sum = 0.0;
-    for (int i = 0; i < order; i++) {
-        terms[i] = 1.0 / factorial(i);
-        sum += terms[i];
-    }
-    return sum;
-}
-
-// Function to free the allocated memory for the array
-void free_array(double* array) {
-    free(array);
-}
-
-// Functions for integer array operations
-int* allocate_integer_array(int size) {
-    return (int*)malloc(size * sizeof(int));
-}
-
-//function to fill every cell of the array with one
-void fill_with_ones(int* array, int size) {
+// Fill array with ones
+void fillWithOnes(double* array, int size) {
     for (int i = 0; i < size; i++) {
-        array[i] = 1;
+        array[i] = 1.0;
     }
 }
 
-//function to print the array elements
-void print_array(int* array, int size) {
+// Print array
+void printArray(double* array, int size) {
     for (int i = 0; i < size; i++) {
-        printf("%d ", array[i]);
+        printf("%lf ", array[i]);
     }
     printf("\n");
 }
 
-void free_integer_array(int* array) {
+// Free memory
+void freeArray(double* array) {
     free(array);
 }
 
-int main() {
-    const double actual_value = 2.71828;  // Approximate true value of e
+// Calculate factorial
+double factorial(int n) {
+    double fact = 1.0;
+    for (int i = 1; i <= n; i++) {
+        fact *= i;
+    }
+    return fact;
+}
 
-    // Loop through orders from 1 to 15 for the polynomial approximation
-    for (int order = 1; order <= 15; order++) {
-        double* terms = allocate_array(order);
-        double approximation = e_approximation(terms, order);
-        printf("Order %d: Approximation = %.5f, Error = %.5f\n", order, approximation, actual_value - approximation);
-        free_array(terms);
+// Calculate Taylor series
+double calExponential(int order) {
+    double estimate = 0.0;
+    for (int i = 0; i <= order; i++) {
+        estimate += 1.0 / factorial(i); 
+    }
+    return estimate;
+}
+
+int main() {
+    const double trueValue = exp(1);
+    int order;
+
+    printf("Enter the order of the polynomial: ");
+    scanf("%d", &order);
+
+    double* estimates = allocateArray(order + 1);
+
+    for (int i = 0; i <= order; i++) {
+        estimates[i] = calExponential(i);
     }
 
-    // Demonstrating integer array operations
-    int size = 10;
-    int* int_array = allocate_integer_array(size);
-    fill_with_ones(int_array, size);
-    printf("Integer array filled with ones: ");
-    print_array(int_array, size);
-    free_integer_array(int_array);
+    printf("\nOrder\tEstimate\tDifference\n");
+    for (int i = 0; i <= order; i++) {
+        printf("%d\t%lf\t%lf\n", i, estimates[i], fabs(trueValue - estimates[i]));
+    }
+
+    printf("Actual value of e = 2.7182818284\n");
+
+    freeArray(estimates);
+
+    int size;
+    printf("\nEnter the size of array for pointer operations: ");
+    scanf("%d", &size);
+
+    double* intArray = allocateArray(size);
+    fillWithOnes(intArray, size);
+
+    printf("\nArray filled with ones: ");
+    printArray(intArray, size);
+
+    freeArray(intArray);
 
     return 0;
 }

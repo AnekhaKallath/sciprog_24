@@ -1,0 +1,66 @@
+958c4f9 (HEAD -> main) Add practical files and updates - final
+297eeec (final) Track all untracked files
+b1416ea (origin/readme_1, readme_1) Updated README.md file
+b55214c (origin/readme, readme) Updated README.md file
+b4fc902 (origin/practical08_update, practical08_update) Added README to Week 8
+26d10d1 (origin/practical07_update, practical07_update) Update in week 7 practicals
+4b643f6 (origin/practical06_update, practical06_update) Added README to Week 6
+aa8b0db (origin/practical09, practical09) Week 9 practicals
+9ccdaea (origin/practical05_update, practical05_update) Update in week 5 practicals
+1452ef8 (origin/practical04_update, practical04_update) Update in week 4 practicals
+8236be3 (origin/practical03_update, practical03_update) Update in week 3 practicals
+67969a7 (practical02_update) Updated README.md in practical02 folder
+650fcbb (practical08) Adding README file to practical02
+dc55a16 (origin/practical08) Week 8 practicals
+d6b9b07 (practical07) Add .DS_Store and FETCH_HEAD to .gitignore
+2b48b35 (origin/practical07, practical06) Week 7 practicals
+fa15305 (origin/practical06) Week 6 practicals
+a285bd4 (origin/practical05, practical05) Week 5 practicals
+011db59 (origin/practical04, practical04) Week 4 practicals
+:...skipping...
+958c4f9 (HEAD -> main) Add practical files and updates - final
+297eeec (final) Track all untracked files
+b1416ea (origin/readme_1, readme_1) Updated README.md file
+b55214c (origin/readme, readme) Updated README.md file
+b4fc902 (origin/practical08_update, practical08_update) Added README to Week 8
+26d10d1 (origin/practical07_update, practical07_update) Update in week 7 practicals
+4b643f6 (origin/practical06_update, practical06_update) Added README to Week 6
+aa8b0db (origin/practical09, practical09) Week 9 practicals
+9ccdaea (origin/practical05_update, practical05_update) Update in week 5 practicals
+1452ef8 (origin/practical04_update, practical04_update) Update in week 4 practicals
+8236be3 (origin/practical03_update, practical03_update) Update in week 3 practicals
+67969a7 (practical02_update) Updated README.md in practical02 folder
+650fcbb (practical08) Adding README file to practical02
+dc55a16 (origin/practical08) Week 8 practicals
+d6b9b07 (practical07) Add .DS_Store and FETCH_HEAD to .gitignore
+2b48b35 (origin/practical07, practical06) Week 7 practicals
+fa15305 (origin/practical06) Week 6 practicals
+a285bd4 (origin/practical05, practical05) Week 5 practicals
+011db59 (origin/practical04, practical04) Week 4 practicals
+654510c (origin/practical03, practical03) Week 3 practicals
+624c3a0 (origin/practical02, practical02) Week 2 practicals
+:...skipping...
+958c4f9 (HEAD -> main) Add practical files and updates - final
+297eeec (final) Track all untracked files
+b1416ea (origin/readme_1, readme_1) Updated README.md file
+b55214c (origin/readme, readme) Updated README.md file
+b4fc902 (origin/practical08_update, practical08_update) Added README to Week 8
+26d10d1 (origin/practical07_update, practical07_update) Update in week 7 practicals
+4b643f6 (origin/practical06_update, practical06_update) Added README to Week 6
+aa8b0db (origin/practical09, practical09) Week 9 practicals
+9ccdaea (origin/practical05_update, practical05_update) Update in week 5 practicals
+1452ef8 (origin/practical04_update, practical04_update) Update in week 4 practicals
+8236be3 (origin/practical03_update, practical03_update) Update in week 3 practicals
+67969a7 (practical02_update) Updated README.md in practical02 folder
+650fcbb (practical08) Adding README file to practical02
+dc55a16 (origin/practical08) Week 8 practicals
+d6b9b07 (practical07) Add .DS_Store and FETCH_HEAD to .gitignore
+2b48b35 (origin/practical07, practical06) Week 7 practicals
+fa15305 (origin/practical06) Week 6 practicals
+a285bd4 (origin/practical05, practical05) Week 5 practicals
+011db59 (origin/practical04, practical04) Week 4 practicals
+654510c (origin/practical03, practical03) Week 3 practicals
+624c3a0 (origin/practical02, practical02) Week 2 practicals
+c03da2c (origin/practical01, practical01) Add files to practical01 folder
+7190e67 (origin/main) Add Intro to Git Assignment
+59d7a94 Initial commit

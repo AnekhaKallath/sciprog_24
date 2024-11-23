@@ -1,51 +1,55 @@
 #include <stdio.h>
 #include <math.h>
 
-/* Maclaurin series approximation */
-double artanh_mclaurin(double x, double delta) {
-    double sum = 0.0;
-    double term = x;  // since first term is x^1 / 1
-    int n = 0;
+// arctanh using Maclaurin series
+double artanh1(double x, double delta) {
+    double term = x;
+    double result = 0.0;
+    int n = 1;
 
-    while (fabs(term) > delta) {
-        sum += term;
-        n++;
-        term = pow(x, 2*n + 1) / (2*n + 1);  // Next term: x^(2n+1) / (2n+1)
+    while (fabs(term) >= delta) {
+        result += term;
+        n += 2;
+        term = pow(x, n) / n;
     }
-
-    return sum;
+    return result;
 }
 
-/* Logarithmic formula for arctanh(x) */
-double artanh_log(double x) {
+// arctanh using log
+double artanh2(double x) {
     return 0.5 * (log(1 + x) - log(1 - x));
 }
 
-int main(void) {
-    double x, delta;
-    
-    /* Get user input */
-    printf("Enter a value for x (|x| < 1): ");
-    scanf("%lf", &x);
-    if (fabs(x) >= 1) {
-        printf("Invalid input. |x| must be less than 1.\n");
-        return 1;
-    }
+int main() {
+    double delta, x;
+    double maclaurin[181];
+    double log_result[181];
+    int index = 0;
 
-    printf("Enter a small positive number for delta (precision): ");
+    printf("Enter a positive precision value (delta): ");
     scanf("%lf", &delta);
+
     if (delta <= 0) {
-        printf("Invalid input, delta must be a positive number.\n");
+        printf("Delta must be a positive value.\n");
         return 1;
     }
 
-    /* Compute arctanh using both methods */
-    double result_mclaurin = artanh_mclaurin(x, delta);
-    double result_log = artanh_log(x);
+    for (x = -0.9; x <= 0.9; x += 0.01) {
+        maclaurin[index] = artanh1(x, delta);
+        log_result[index] = artanh2(x);
+        index++;
+    }
 
-    /* Output the results */
-    printf("Maclaurin series approximation of arctanh(%lf): %lf\n", x, result_mclaurin);
-    printf("Logarithmic formula result of arctanh(%lf): %lf\n", x, result_log);
+    // Compare results to 10 significant figures
+    printf("\nx\tartanh1\t\tartanh2\t\tDifference\n");
+    for (int i = 0; i < 181; i++) {
+        double difference = fabs(maclaurin[i] - log_result[i]);
+        printf("%.2f\t%.10f\t%.10f\t%.10e\n", 
+               -0.9 + i * 0.01, 
+               maclaurin[i], 
+               log_result[i], 
+               difference);
+    }
 
     return 0;
 }

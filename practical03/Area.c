@@ -13,23 +13,22 @@ int main(void) {
     // Step size
     h = (b - a) / (N - 1);
 
-    /* First and last points */
+    // first and last points
     sum = tan(a) + tan(b);
 
-    /* Intermediate points */
+    // Intermediate points
     for (i = 1; i < N - 1; i++) {
-        double xi = a + i * h;  // xi is the ith point
-        sum += 2 * tan(xi);     // Add 2*f(xi) to the sum
+        double xi = a + i * h; 
+        sum += 2 * tan(xi); 
     }
 
     result = (b - a) * sum / (2 * (N - 1));
 
-    /* Exact result (log(2)) */
+    // log2 results
     exact_result = log(2.0);
 
     difference = result - exact_result;
 
-    // Output
     printf("Approximate integral using Trapezoidal Rule: %f\n", result);
     printf("Exact integral (log(2)): %f\n", exact_result);
     printf("Difference: %f\n", fabs(difference));
